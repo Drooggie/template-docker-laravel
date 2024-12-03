@@ -16,8 +16,11 @@ fi
 
 php artisan key:generate
 
-if  php artisan migrate:status | grep -q "No migrations found."; then
-    php artisan migrate:fresh --seed --force
+if [ ! -f /var/www/storage/.migrations_done ]; then
+    echo "Running migrations..."
+    php artisan migrate:fresh --seed --force  
+
+    touch /var/www/storage/.migrations_done
 fi
 
 exec php-fpm

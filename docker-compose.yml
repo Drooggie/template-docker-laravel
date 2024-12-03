@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: forum_api
       MYSQL_PASSWORD: secret
     volumes:
-      - /mysql:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     networks:
       - forum_api_network
 
@@ -48,7 +48,7 @@ services:
       - app
 
 volumes:
-  mysql:
+  mysql-data:
 
 
 networks:
