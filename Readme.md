@@ -13,7 +13,7 @@ cd template-docker-laravel
 
 Run this command for building and starting containers
 ```
-docker-compose up -d --build && docker-compose logs -f app
+docker compose up -d --build && docker compose logs -f app
 ```  
 <br />
 
